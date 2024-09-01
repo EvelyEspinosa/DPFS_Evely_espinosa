@@ -1,0 +1,204 @@
+body {
+    font-family: "Zilla Slab",system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+  }
+  /* NAVBAR */
+nav {
+    background-color: #fff;
+    padding: 10px 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav img{
+    width: 44px;
+    height: 44px;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+    color: #2e78e2;
+  }
+  /* MENU HAMBURGUESA */
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .menu-toggle.active + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #0073e6;
+    padding: 10px 0;
+  }
+  
+  .menu-toggle.active + ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+  
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    nav ul li {
+        margin: 0;
+    }
+  }
+  main{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.id {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    flex: 1;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+.image img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.description {
+    flex: 2;
+    padding: 20px;
+}
+
+.description h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #2e78e2;
+}
+
+.description p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #666;
+}
+.description .price {
+    font-size: 1.5em;
+    color: #e60000;
+    margin-bottom: 20px;
+}
+
+.description button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.description button:hover {
+    background-color: #2e78e2;
+}
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image {
+        margin: 0 0 20px 0;
+        max-width: 100%;
+    }
+    .description {
+        padding: 0;
+    }
+}
+/* FOOTER */
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+  }
+  footer p {
+    margin: 0;
+  }
+  .footer-logo img {
+    margin: 10px;
+    width: 70px;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer-contact,
+  .footer-links,
+  .footer-social {
+    flex: 1;
+    padding: 0 20px;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links a {
+    color: #000;
+    text-decoration: none;
+  }
+  .footer-bottom {
+    margin-top: 20px;
+  }
+  .footer-content h3{
+    color:#2e78e2
+  }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Detalle de Producto</title>
+    <link rel="stylesheet" href="css/product.css"/>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <!-- Inclui el menú -->
+    <%- include('partials/menu') %>
+
+    <main>
+    <div class="container">
+        <div class="id">
+            <!-- Imagen del producto -->
+            <div class="image">
+                <img src="./images/vestido_estampado_floral.jpg" alt="Vestido estampado floral">
+            </div>
+
+            <!-- Información del producto -->
+            <div class="description">
+                <h1><%= Vestido Estampado Floral %></h1>
+                <h2><%= Características: %></h2>
+                    <ul type="disc">
+                       <li><%= Disponibles: Azul Royal %></li>
+                       <li><%= Material: Poliester y spandex %></li>
+                       <li><%= Made in USA %></li>
+                    </ul>
+                <p class="price"><%= $100.00 %></p>
+            </div>
+        </div>
+                <!-- Botón para agregar al carrito -->
+                <button onclick="addToCart()">Agregar al Carrito</button>
+    </div>
+</main>
+
+  <!-- Inclui el footer -->
+  <%- include('partials/footer') %>
+
+  <script src="/miProyecto/public/javascripts/product.js"></script>
+</body>
+</html>

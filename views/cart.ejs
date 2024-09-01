@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/cart.css"/>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <!-- Inclui el menú -->
+    <%- include('partials/menu') %>
+<main>
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+
+        <!-- Tabla del Carrito -->
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Ejemplo de un producto en el carrito -->
+                <tr>
+                    <td><img src="https://via.placeholder.com/100" alt="Producto"></td>
+                    <td>Nombre del Producto</td>
+                    <td>$99.99</td>
+                    <td><input type="number" value="1" min="1" onchange="updateCart(this)"></td>
+                    <td>$99.99</td>
+                    <td><button onclick="removeFromCart(this)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Total del Carrito -->
+        <div class="cart-total">
+            Total: $99.99
+        </div>
+
+        <!-- Botón para Finalizar la Compra -->
+        <a href="checkout.html" class="checkout-button">Finalizar Compra</a>
+    </div>
+</main>
+    <!-- Inclui el footer -->
+    <%- include('partials/footer') %>
+    <script src="/miProyecto/public/javascripts/cart.js"></script>
+</body>
+</html>
