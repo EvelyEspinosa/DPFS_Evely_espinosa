@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="/miProyecto/public/css/edit-product.css">
+    <!-- Inclui el head -->
+    <%- include('partials/head') %>
+</head>
+<body>
+
+    <!-- Inclui el menú -->
+    <%- include('partials/menu') %>
+
+    <main>
+        <h1>Editar Producto</h1>
+        <form action="/products/<%= product.id %>" method="POST" >
+            <label for="name">Nombre del Producto:</label>
+            <input type="text" id="name" name="name" value="<%= product.name %>" required>
+            
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="4" required><%= product.description %></textarea>
+            
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" step="0.01" value="<%= product.price %>" required>
+            
+            <label for="image">Imagen:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <img src="<%= product.imagePath || '/images/product-placeholder.jpg' %>" alt="Imagen del Producto" style="max-width: 200px;">
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </main>
+
+    <!-- Inclui el footer -->
+    <%- include('partials/footer') %>
+    <script src="/miProyecto/app.js"></script>
+</body>
+</html>

@@ -21,7 +21,7 @@ function validarFormulario() {
     let validacionCorrecta = true;
 
     camposTexto.forEach(campo => {
-        let errorCampo = document.getElementById('error' + campo.id.charAt(0).toUpperCase() + campo.id.slice(1))// error + id con la primera en mayuscula
+        let errorCampo = document.getElementById('error' + campo.id.charAt(0).toUpperCase() + campo.id.slice(1))
         if (campo.value.length == '') {
             mostrarError(errorCampo, '¡Este campo es requerido!')
             validacionCorrecta = false
@@ -36,7 +36,7 @@ function validarFormulario() {
     //esto validael campo email
     const email = document.getElementById('email');
     let errorEmail = document.getElementById('errorEmail')
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {// este regex valida que el formato del email sea valido.SIEMPRE VA HACER EL MISMO
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         ocultarError(errorEmail)
     } else {
         mostrarError(errorEmail, '!Ingrese un correo electronico válido¡')

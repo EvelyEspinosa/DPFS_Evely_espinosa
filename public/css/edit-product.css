@@ -47,3 +47,31 @@ button:hover {
 img {
     margin-top: 10px;
 }
+/* Estilos para la lista de productos */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+ul li a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #2e78e2;
+}
+
+ul li form {
+    display: inline;
+}
+
+ul li form button {
+    background-color: #FF4D4D;
+    margin-left: 10px;
+}
+
+ul li form button:hover {
+    background-color: #FF6666;
+}

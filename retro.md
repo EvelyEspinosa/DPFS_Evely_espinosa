@@ -1,11 +1,4 @@
- # Restropectiva del Primer Sprint
+ # Restropectiva del Sprint
 
- ## 1. Comenzar a hacer
-
- ## 2. Hacer mas
-
- ## 3. Continuar haciendo
-
- ## 4. Hacer menos 
-
- ## 5. Dejar de hacer
+ ## 1. Experiencia
+ Mi punto de vista: Muchas cosas que hacer para una sola persona, hubo muy pocotiempo para culminar en proyecto, mucha desesperacion por querer avanzar lo mas posible(PERO ESO OCACIONA MUCHOS ERRORES)
