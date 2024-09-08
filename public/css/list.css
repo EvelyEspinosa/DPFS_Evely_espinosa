@@ -1,0 +1,197 @@
+body {
+    font-family: "Zilla Slab",system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+  }
+  /* NAVBAR */
+  nav {
+    background-color: #fff;
+    padding: 10px 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav img{
+    width: 44px;
+    height: 44px;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+    color: #2e78e2;
+  }
+  
+  /* MENU HAMBURGUESA */
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .menu-toggle.active + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #0073e6;
+    padding: 10px 0;
+  }
+  
+  .menu-toggle.active + ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+  
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    nav ul li {
+        margin: 0;
+    }
+  }
+  
+  header{
+    background: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8)100%), url('/miProyecto/public/images/Derby_Days.jpg');
+    height: 75vh;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+    background-repeat: repeat;
+  }
+  
+  header p {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  header h2 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+  }
+  
+  header h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #2e78e2;
+  }
+  form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .product-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .product-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+  
+  .product-info {
+    flex-grow: 1;
+  }
+  
+  .product-actions {
+    display: flex;
+    gap: 10px;
+  }
+/* FOOTER */
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+  }
+  footer p {
+    margin: 0;
+  }
+  .footer-logo img {
+    margin: 10px;
+    width: 70px;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer-contact,
+  .footer-links,
+  .footer-social {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+  }
+  
+  .footer-content h3{
+    color:#2e78e2
+  }  

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Detalle de Producto</title>
+    <link rel="stylesheet" href="css/product.css"/>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <!-- Inclui el menú -->
+    <%- include('partials/menu') %>
+
+    <div class="container">
+        <div class="id">
+            <div class="image">
+                <img src="/images/vestido_estampado_floral.jpg" alt="Vestido estampado floral">
+            </div>
+
+            <!-- Información del producto -->
+            <div class="description">
+                <h1> Vestido Estampado Floral </h1>
+                <h2>Características: </h2>
+                    <ul type="disc">
+                       <li>Disponibles: Azul Royal </li>
+                       <li>Material: Poliester y spandex </li>
+                       <li>Made in USA</li>
+                    </ul>
+                <p class="price">$100.00 </p>
+            </div>
+        </div>
+                <!-- Botón para agregar al carrito -->
+                <button onclick="addToCart()">Agregar al Carrito</button>
+    </div>
+        <a href="/products/product/:id/edit">Editar Producto</a></br>
+        <form action="/:id/delete" method="POST" style="display:inline;">
+            <button type="submit">Eliminar</button>
+        </form></br>
+        <a href="/list">Volver al listado</a>
+    </div>
+</main>
+
+  <!-- Inclui el footer -->
+  <%- include('partials/footer') %>
+
+<script module="../public/javascripts/product.js"></script>
+<script module="../routes/products.js"></script>
+</body>
+</html>

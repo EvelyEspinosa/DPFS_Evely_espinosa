@@ -2,27 +2,59 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Ely Shopping' });
+router.get('/', async function(req, res, next) {
+  try {
+    res.render('index');
+  } catch (error) {
+    next(error); // Pasar el error al middleware de manejo de errores
+  }
 });
 
-router.get('/users', function( req, res, next){
-  res.render('users', { title: 'Usuarios' });
+router.get('/register', (req, res) =>{
+  res.render('register.ejs');
 });
 
-router.get('/product', function( req, res, next){
+router.get('/products', (req, res) =>{
+  res.render('product.ejs');
+});
+
+router.get('/login', (req, res) =>{
+  res.render('login.ejs');
+});
+
+router.get('/cart', (req, res) =>{
+  res.render('cart.ejs');
+});
+
+router.get('/create', (req, res) =>{
+  res.render('create.ejs');
+});
+
+router.get('/edit', (req, res) =>{
+  res.render('edit.ejs');
+});
+
+router.get('/register', (req, res) => {
+  res.render('register', { title: 'Registrate' });
+});
+
+router.get('/product', (req, res) => {
   res.render('products', { title: 'Productos' });
 });
 
-router.get('/cart', function( req, res, next){
-  res.render('cart', { title: 'Carrito de compra' });
+router.get('/users', (req, res) => {
+  res.render('users', { title: 'Usuarios' });
 });
 
-router.get('/login', function( req, res, next){
-  res.render('login', { title: 'Ingresar' });
+router.get('/:id/edit', (req, res) => {
+  res.render('edit', { title: 'Editar Producto' });
 });
 
-router.get('/register', function( req, res, next){
-  res.render('register', { title: 'Registrarse' });
+router.get('/create', (req, res) => {
+  res.render('create', { title: 'Crear Producto' });
+});
+
+router.get('/list', (req, res) => {
+  res.render('list', { title: 'Lista de productos' });
 });
 module.exports = router;

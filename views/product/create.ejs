@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Producto</title>
-    <link rel="stylesheet" href="/miProyecto/public/css/edit-product.css">
+    <link rel="stylesheet" href="/css/edit-product.css">
 </head>
 <body>
     <!-- Inclui el header -->
@@ -15,7 +15,7 @@
 
     <main>
         <h1>Crear Producto</h1>
-        <form action="/products" method="POST" enctype="multipart/form-data">
+        <form action="../../routes/products.js" method="POST">
             <label for="name">Nombre del Producto:</label>
             <input type="text" id="name" name="name" required>
             
@@ -35,5 +35,6 @@
     <!-- Inclui el footer -->
     <%- include('partials/footer') %>
     <script src="/miProyecto/app.js"></script>
+    <script src=""></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto</title>
-    <link rel="stylesheet" href="/miProyecto/public/css/edit-product.css">
+    <link rel="stylesheet" href="../../public/css/edit-product.css">
     <!-- Inclui el head -->
     <%- include('partials/head') %>
 </head>
@@ -15,7 +15,7 @@
 
     <main>
         <h1>Editar Producto</h1>
-        <form action="/products/<%= product.id %>" method="POST" >
+        <form action="../../routes/products.js"  method="POST" >
             <label for="name">Nombre del Producto:</label>
             <input type="text" id="name" name="name" value="<%= product.name %>" required>
             

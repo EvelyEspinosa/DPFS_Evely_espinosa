@@ -25,11 +25,10 @@
                 </tr>
             </thead>
             <tbody id="cart-items">
-                <!-- Ejemplo de un producto en el carrito -->
                 <tr>
-                    <td><img src="https://via.placeholder.com/100" alt="Producto"></td>
+                    <td><img src="" alt="Producto" required></td>
                     <td>Nombre del Producto</td>
-                    <td>$99.99</td>
+                    <td></td>
                     <td><input type="number" value="1" min="1" onchange="updateCart(this)"></td>
                     <td>$99.99</td>
                     <td><button onclick="removeFromCart(this)">Eliminar</button></td>
@@ -39,15 +38,16 @@
 
         <!-- Total del Carrito -->
         <div class="cart-total">
-            Total: $99.99
+           
         </div>
 
         <!-- Botón para Finalizar la Compra -->
-        <a href="checkout.html" class="checkout-button">Finalizar Compra</a>
+        <a class="checkout-button">Finalizar Compra</a>
     </div>
 </main>
     <!-- Inclui el footer -->
     <%- include('partials/footer') %>
-    <script src="/miProyecto/public/javascripts/cart.js"></script>
+    <script src="../public/javascripts/cart.js"></script>
+    <script src="../routes/cart.js"></script>
 </body>
 </html>
