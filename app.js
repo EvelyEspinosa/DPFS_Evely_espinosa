@@ -36,6 +36,55 @@ app.use('/users', usersRouter);
 app.use('/product', productRouter);
 app.use('/cart',cartRouter);
 
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Página de Inicio',
+    styles: ['/css/style.css']
+  });
+});
+
+app.get('/cart', (req, res) => {
+  res.render('cart', {
+    title: 'Carrito de compra',
+    styles: ['/css/cart.css']
+  });
+});
+
+app.get('/product', (req, res) => {
+  res.render('product', {
+    title: 'Productos',
+    styles: ['/css/product.css']
+  });
+});
+
+app.get('/register', (req, res) => {
+  res.render('register', {
+    title: 'Registrarse',
+    styles: ['/css/register.css']
+  });
+});
+
+app.get('/login', (req, res) => {
+  res.render('login', {
+    title: 'Iniciar Sesión',
+    styles: ['/css/login.css']
+  });
+});
+
+app.get('/list', (req, res) => {
+  res.render('list', {
+    title: 'Lista de Productos',
+    styles: ['/css/list.css']
+  });
+});
+
+app.get('/users', (req, res) => {
+  res.render('users', {
+    title: 'Usuarios',
+    styles: ['/css/users.css']
+  });
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

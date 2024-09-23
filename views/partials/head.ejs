@@ -6,4 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600&display=swap">
+    <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <% if (styles) { %>
+    <% styles.forEach(style => { %>
+      <link rel="stylesheet" href="<%= style %>">
+    <% }) %>
+  <% } %>
 </head>
