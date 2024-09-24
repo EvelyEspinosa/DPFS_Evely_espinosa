@@ -84,74 +84,37 @@ nav {
     display: flex;
     justify-content: space-around;
   }
-
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
-
-.id {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.image {
-    flex: 1;
-    max-width: 500px;
-    margin-right: 20px;
-}
-
-.image img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.description {
-    flex: 2;
-    padding: 20px;
-}
-
-.description h1 {
+  h1{
     margin-bottom: 10px;
     font-size: 2em;
     color: #2e78e2;
-}
-
-.description p {
+  }
+  p {
     margin-bottom: 15px;
     font-size: 1.1em;
     color: #666;
 }
-.description .price {
-    font-size: 1.5em;
-    color: #e60000;
-    margin-bottom: 20px;
-}
-
-.description button {
-    background-color: #000;
+a{
+    background-color: #0073e6;
     color: #fff;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.2em;
+    padding: 10px;
+    font-size: 16px;
+}
+form button{
+        width: 100%;
+        padding: 10px;
+        background-color: #0073e6;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
 }
 
-.description button:hover {
-    background-color: #2e78e2;
-}
-.edit{
-  display: flex;
-  justify-content: space-around;
-}
-/* Adaptabilidad para móviles */
+  /* Adaptabilidad para móviles */
 @media (max-width: 768px) {
     .products {
         flex-direction: column;
@@ -190,7 +153,7 @@ footer {
   .footer-links,
   .footer-social {
     flex: 1;
-    padding: 0 20px;
+    padding: 0 20px;;
   }
   .footer-links ul {
     list-style: none;

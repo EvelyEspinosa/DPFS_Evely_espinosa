@@ -1,11 +1,8 @@
-var createError = require('http-errors');
 var express = require('express');
 var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const ejs = require('ejs');
@@ -39,7 +36,7 @@ app.use('/cart',cartRouter);
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'Página de Inicio',
-    styles: ['/css/style.css']
+    styles: ['../public/css/style.css']
   });
 });
 
@@ -47,13 +44,6 @@ app.get('/cart', (req, res) => {
   res.render('cart', {
     title: 'Carrito de compra',
     styles: ['/css/cart.css']
-  });
-});
-
-app.get('/product', (req, res) => {
-  res.render('product', {
-    title: 'Productos',
-    styles: ['/css/product.css']
   });
 });
 
