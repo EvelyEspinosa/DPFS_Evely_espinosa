@@ -28,3 +28,6 @@
  ## Tablero
 
  Aqui tiene el link del [Trello](https://trello.com/b/exzSAyF2/proyecto-final).
+
+ ## Diagrama
+ ("C:\Users\ESTUDIANTEA01\Downloads\Diagrama ely.pdf")

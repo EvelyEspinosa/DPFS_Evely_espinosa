@@ -2,99 +2,113 @@
   {
     "id": "1",
     "name": "gabardina",
-    "description": "DOUBLE BREASTED - Color: khaki",
+    "description": "DOUBLE BREASTED",
     "price": 69.99,
-    "image": "/images/gabardina.jpg"
+    "image": "/images/gabardina.jpg",
+    "colors":"khaki"
   },
   {
     "id": "2",
     "name": "Jersey",
-    "description": "LOVE WINS HOODIE - Color: white",
+    "description": "LOVE WINS HOODIE",
     "price": 36.00,
-    "image": "/images/love_wins.jpg"
+    "image": "/images/love_wins.jpg",
+    "colors":"white"
   },
   {
     "id": "3",
     "name": "Vestido Cocktail",
-    "description": "Colores Disponibles: Verde. Material: Poliester y spandex. Made in USA.",
+    "description": "Material: Poliester y spandex. Made in USA.",
     "price": 89.00,
-    "image": "/images/vestido_cocktail.jpg"
+    "image": "/images/vestido_cocktail.jpg",
+    "colors": "Green"
   },
   {
     "id": "4",
     "name": "Vestido Estampado Floral",
-    "description": "Disponibles: Azul Royal. Material: Poliester y spandex. Made in USA.",
+    "description": "Material: Poliester y spandex. Made in USA.",
     "price": 100.00,
-    "image": "/images/vestido_estampado_floral.jpg"
+    "image": "/images/vestido_estampado_floral.jpg",
+    "colors": "Blue"
   },
   {
     "id": "5",
     "name": "Vestido Jeans",
-    "description": "",
+    "description": "Comodo y muy fresco",
     "price": 79.00,
-    "image": "/images/vestido_de_jeans.jpg"
+    "image": "/images/vestido_de_jeans.jpg",
+    "colors": "Blue"
   },
   {
     "id": "6",
     "name": "Vestido Camisero",
-    "description": "VIMATHILDA SHIRT DRESS - Color: cornstalk",
+    "description": "VIMATHILDA SHIRT DRESS",
     "price": 30.00,
-    "image": "/images/vestido_camisero_v.jpg"
+    "image": "/images/vestido_camisero_v.jpg",
+    "colors": "cornstalk"
   },
   {
     "id": "7",
     "name": "Vestido De Punto",
-    "description": "Color: marine",
+    "description": "Con pliegues y ajustable",
     "price": 70.00,
-    "image": "/images/vestido_de_punto.jpg"
+    "image": "/images/vestido_de_punto.jpg",
+    "colors": "marine"
   },
   {
     "id": "8",
     "name": "Shorts deportivo",
-    "description": "Shorts deportivos de unicolor y secado rápido. Color: Negro.",
+    "description": "Shorts deportivos de unicolor y secado rápido.",
     "price": 63.95,
-    "image": "/images/Shorts_deportivo.jpg"
+    "image": "/images/Shorts_deportivo.jpg",
+    "colors": "Black"
   },
   {
     "id": "9",
     "name": "Camiseta estampada",
-    "description": "TROPICAL TRIAN - Color: peach sky",
+    "description": "TROPICAL TRIAN",
     "price": 23.75,
-    "image": "/images/tropical_trian.jpg"
+    "image": "/images/tropical_trian.jpg",
+    "colors": "peach sky"
   },
   {
     "id": "10",
     "name": "Mono",
     "description": "Relleno 100% poliéster, Material/composición: Jersey encaje, Cuello/escote: En V pronunciado, Cierre:Cremallera, Detalles: Cinturón incluido, costura bajo el pecho ",
     "price": 33.79,
-    "image": "/images/mono_ana.jpg"
+    "image": "/images/mono_ana.jpg",
+    "colors": "Black and White"
   },
   {
     "id": "11",
     "name": "Chaqueta Adidas",
     "description": "Material exterior: 100% poliéster, Deporte: Fitness, Pretina: Ajustable, Cintura: Normal, Cuello: Alzado,Cierre: Cremallera, Bolsillos: Laterales, con cremallera Puño: Elástico, Detalles: Cintura elástica, borde/ribete ",
     "price": 59.45,
-    "image": "/images/chaqueta_adidas.jpg"
+    "image": "/images/chaqueta_adidas.jpg",
+    "colors": "peach sky"
   },
   {
     "id": "12",
     "name": "Top",
     "description": "Deporte: Fitness, Cuello/escote: Cuello redondo, Estampado: Unicolor, Material exterior: 87% poliéster, 13% elastano.",
     "price": 14.99,
-    "image": "/images/top.jpg"
+    "image": "/images/top.jpg",
+    "colors": "Black"
   },
   {
     "id": "13",
     "name": "Chaqueta Cuero",
     "description": "Cuello: Tipo sastre, Cierre: Cremallera, Bolsillos: Bolsillo en el pecho, Estampado: Unicolor, Material exterior: 75% viscosa 25% poliéster, Relleno: 100% poliéster.",
     "price": 24.99,
-    "image": "/images/chaqueta_cuero.jpg"
+    "image": "/images/chaqueta_cuero.jpg",
+    "colors":"Brown"
   },
   {
     "id": "14",
     "name": "Chaleco",
     "description": "Lleva cremallera, bolsillos reales y cinturón a conjunto del chaleco. Dale una vuelta y úsalo como vestido. 60%Viscosa 37%Nylon 3%Elastano",
     "price": 18.50,
-    "image": "/images/chaleco.jpg"
+    "image": "/images/chaleco.jpg",
+    "colors": "peach sky"
   }
 ]
