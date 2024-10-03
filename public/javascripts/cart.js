@@ -5,7 +5,6 @@ function updateCart(element) {
     const total = price * quantity;
     row.children[4].textContent = '$' + total.toFixed(2);
 
-    // Actualizar el total del carrito
     updateCartTotal();
 }
 
@@ -13,7 +12,6 @@ function removeFromCart(element) {
     const row = element.closest('tr');
     row.remove();
 
-    // Actualizar el total del carrito
     updateCartTotal();
 }
 

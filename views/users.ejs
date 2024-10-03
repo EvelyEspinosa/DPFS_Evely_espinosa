@@ -7,20 +7,20 @@
     <%- include('partials/menu') %>
     
     <h1>Lista de Usuarios</h1>
-    <main>
-<% users.forEach(user => { %>
-  <p><%= users.name %> - <%= user.email %></p>
-  <a href="/users/<%= user.id %>">Ver detalles</a>
-  <a href="/users/<%= user.id %>/edit">Editar</a>
-  <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-      <button type="submit">Eliminar</button>
-  </form>
-<% }) %>
+<main>
+  <ul>
+    <% users.forEach(user => { %>
+      <li>
+        <p><%= user.firstName %> - <%= user.email %></p>
+        <a href="/users/<%= user.id %>">Ver detalles</a>
+        <a href="/users/<%= user.id %>/edit">Editar</a>
+      </li>
+    <% }) %>
+  </ul>
 </main>
 
 <%- include('partials/footer') %>
-
-<script src="../controllers/usersController.js"></script>
-<script src="../routes/users.js"></script>
+<script type="module" src="../routes/users.js"></script>
+<script type="module" src="../api/users.js"></script>
 </body>
 </html>

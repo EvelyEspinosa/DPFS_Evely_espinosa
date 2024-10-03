@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Producto</title>
-    <link rel="stylesheet" href="/css/edit-product.css">
+    <%- include('partials/head') %>
 </head>
 <body>
-    <!-- Inclui el header -->
-    <%- include('partials/header') %>
-
     <!-- Inclui el menú -->
     <%- include('partials/menu') %>
 
     <main>
         <h1>Crear Producto</h1>
-        <form action="../../routes/products.js" method="POST">
+        <form action="/create" method="POST">
             <label for="name">Nombre del Producto:</label>
             <input type="text" id="name" name="name" required>
             
@@ -34,7 +28,7 @@
 
     <!-- Inclui el footer -->
     <%- include('partials/footer') %>
-    <script src="/miProyecto/app.js"></script>
-    <script src=""></script>
+    <script type="module" src="../../public/javascripts/product.js"></script>
+    <script type="module" src="../../routes/products.js"></script>
 </body>
 </html>

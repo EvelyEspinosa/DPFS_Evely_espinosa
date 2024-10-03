@@ -1,39 +1,32 @@
-const fs = require('fs');
-const path = require('path');
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const userFilePath = path.join(__dirname, '../data/users.json');
-
-
-function readUsers() {
-    const fileData = fs.readFileSync(userFilePath, 'utf-8');
-    return JSON.parse(fileData);
-}
-
-function writeUsers(users) {
-    const jsonData = JSON.stringify(users, null, 2);
-    fs.writeFileSync(userFilePath, jsonData, 'utf-8');
-}
-
-function createUsers (req, res) {
-    const { firstname, lastName, email, password,  type, avatar } = req.body;
-  
-      const users = JSON.parse(userFilePath);
-
-      const newUsers = {
-        id: users.length + 1,
-        firstname,
-        lastName,
-        email,
-        password,
-        type,
-        avatar
-      }
-      users.push(newUsers);
+const User = sequelize.define('Users', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    profile_image: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
+}, {
+    tableName: 'users',
+    timestamps: true
+});
 
-// Exportar las funciones para usarlas en los controladores
-module.exports = {
-    readUsers,
-    writeUsers,
-    createUsers
-};
+module.exports = User;

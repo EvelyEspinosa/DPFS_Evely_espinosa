@@ -42,16 +42,20 @@ nav {
     color: #2e78e2;
   }
   /* MENU HAMBURGUESA */
-  .menu-toggle {
+  .dropdown {
     display: none;
     font-size: 24px;
     color: #000;
     cursor: pointer;
   }
-  
-  .menu-toggle.active + ul {
+  .dropdown-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .dropdown.active + .dropdown-menu {
     display: flex;
     flex-direction: column;
+    opacity: 1;
     position: absolute;
     top: 50px;
     left: 0;
@@ -59,26 +63,19 @@ nav {
     background-color: #0073e6;
     padding: 10px 0;
   }
-  
-  .menu-toggle.active + ul li {
+  .dropdown.active + .dropdown-menu li.dropdown-item {
     margin: 10px 0;
     text-align: center;
   }
-  
   @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-  
-    nav ul {
+    .dropdown {
+        display: block;}
+    .dropdown-menu:active {
         display: none;
         flex-direction: column;
-        width: 100%;
-    }
-  
-    nav ul li {
-        margin: 0;
-    }
+        width: 100%;}
+    .dropdown-menu li {
+        margin: 0;}
   }
   main{
     display: flex;

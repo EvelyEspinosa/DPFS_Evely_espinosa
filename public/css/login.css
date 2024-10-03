@@ -44,14 +44,14 @@ nav {
   }
   
   /* MENU HAMBURGUESA */
-  .menu-toggle {
+  .dropdown {
     display: none;
     font-size: 24px;
     color: #000;
     cursor: pointer;
   }
   
-  .menu-toggle.active + ul {
+  .dropdown.active + .dropdown-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -62,23 +62,23 @@ nav {
     padding: 10px 0;
   }
   
-  .menu-toggle.active + ul li {
+  .dropdown.active + .dropdown-menu li.dropdown-item {
     margin: 10px 0;
     text-align: center;
   }
   
   @media (max-width: 768px) {
-    .menu-toggle {
+    .dropdown {
         display: block;
     }
   
-    nav ul {
+     .dropdown-menu:active{
         display: none;
         flex-direction: column;
         width: 100%;
     }
   
-    nav ul li {
+    .dropdown-menu li {
         margin: 0;
     }
   }
@@ -110,12 +110,12 @@ main{
     margin-bottom: 5px;
   }
   
-.login-container input[type="text"],
+.login-container input[type="email"],
   .login-container input[type="password"] {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
+    border: 2px solid #dedddd;
     border-radius: 5px;
   }
   

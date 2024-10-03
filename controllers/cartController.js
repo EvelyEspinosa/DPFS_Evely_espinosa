@@ -9,7 +9,6 @@ const addToCart = (req, res) => {
     if (!req.session.cart) {
         req.session.cart = [];
     }
-
     const existingProduct = req.session.cart.find(item => item.id === id);
 
     if (existingProduct) {

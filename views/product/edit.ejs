@@ -10,7 +10,7 @@
 
     <main>
         <h1>Editar Producto</h1>
-        <form action="../../routes/products.js"  method="POST" >
+        <form action="/product/:id/edit"  method="PUT" >
             <label for="name">Nombre del Producto:</label>
             <input type="text" id="name" name="name" value="<%= product.name %>" required>
             
@@ -30,6 +30,6 @@
 
     <!-- Inclui el footer -->
     <%- include('partials/footer') %>
-    <script src="/miProyecto/app.js"></script>
+    <script src="../../controllers/productController.js"></script>
 </body>
 </html>

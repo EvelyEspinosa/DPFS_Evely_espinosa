@@ -1,15 +1,17 @@
 var express = require('express');
 var router = express.Router();
+const { body, validationResult } = require('express-validator');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   try {
-    res.render('index', { title: 'Ely Shopping',styles: ['/css/style.css'] });
+    res.render('index', {
+      title: 'Ely Shopping',
+      styles: ['/css/style.css']
+    });
   } catch (error) {
-    next(error); // Pasar el error al middleware de manejo de errores
-  }
-});
-
+    next(error);
+  }});
 
 router.get('/cart', (req, res) => {
   res.render('cart', {
@@ -23,6 +25,30 @@ router.get('/product', (req, res) => {
     title: 'Productos',
     styles: ['/css/product.css']
   });
+});
+
+router.get('/product/list', (req, res) => {
+  res.render('list', {
+    title: 'Lista de Productos',
+    styles: ['/css/list.css']
+  });
+});
+router.get('/product/:id/edit', (req, res) =>{
+  res.render('edit', {
+    title: 'Editar Producto',
+    styles: ['/css/edit-product.css']
+  });
+});
+
+router.get('/product', (req, res) =>{
+  res.render('product.ejs');
+});
+router.get('/product/:id/edit', (req, res) =>{
+  res.render('edit.ejs');
+});
+
+router.get('/product/detail', (req, res) =>{
+  res.render('detail.ejs');
 });
 
 router.get('/register', (req, res) => {
@@ -39,13 +65,6 @@ router.get('/login', (req, res) => {
   });
 });
 
-router.get('/list', (req, res) => {
-  res.render('list', {
-    title: 'Lista de Productos',
-    styles: ['/css/list.css']
-  });
-});
-
 router.get('/users', (req, res) => {
   res.render('users', {
     title: 'Usuarios',
@@ -53,12 +72,9 @@ router.get('/users', (req, res) => {
   });
 });
 
+
 router.get('/register', (req, res) =>{
   res.render('register.ejs');
-});
-
-router.get('/product', (req, res) =>{
-  res.render('product.ejs');
 });
 
 router.get('/login', (req, res) =>{
@@ -69,16 +85,21 @@ router.get('/cart', (req, res) =>{
   res.render('cart.ejs');
 });
 
-router.get('/create', (req, res) =>{
-  res.render('create.ejs');
-});
-
-router.get('/edit', (req, res) =>{
-  res.render('edit.ejs');
-});
-
 router.get('/users', (req, res) =>{
   res.render('users.ejs');
 });
+
+router.post('/login', [
+  body('email')
+      .isEmail().withMessage('Debe proporcionar un correo electrónico válido'),
+  body('password')
+      .notEmpty().withMessage('La contraseña es obligatoria')
+], (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+  }
+});
+
 
 module.exports = router;

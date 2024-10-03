@@ -1,4 +1,90 @@
-main {
+body {
+    font-family: "Zilla Slab",system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+  }
+  /* NAVBAR */
+  nav {
+    background-color: #fff;
+    padding: 10px 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav img{
+    width: 44px;
+    height: 44px;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+    color: #2e78e2;
+  }
+/* MENU HAMBURGUESA */
+.dropdown {
+    display: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .dropdown.active + .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #0073e6;
+    padding: 10px 0;
+  }
+  
+  .dropdown.active + .dropdown-menu li.dropdown-item {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .dropdown {
+        display: block;
+    }
+    .dropdown-menu:active{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .dropdown-menu li {
+        margin: 0;
+    }
+  }
+
+  main {
     margin: 20px;
 }
 
@@ -75,3 +161,58 @@ ul li form button {
 ul li form button:hover {
     background-color: #FF6666;
 }
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+    .cart-table img {
+        max-width: 80px;
+    }
+
+    .cart-table th, .cart-table td {
+        padding: 10px;
+    }
+}
+/* FOOTER */
+footer {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+  }
+  footer p {
+    margin: 0;
+  }
+  .footer-logo img {
+    margin: 10px;
+    width: 70px;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer-contact,
+  .footer-links,
+  .footer-social {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+  }
+
+  .footer-content h3{
+    color:#2e78e2
+  }
