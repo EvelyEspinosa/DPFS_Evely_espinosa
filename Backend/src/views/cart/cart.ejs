@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head', {title:'Carrito', styles:['cart'] }) %>
+</head>
+<body>
+    <!-- Inclui el menú -->
+    <%- include('partials/menu') %>
+<main>
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+
+        <!-- Tabla del Carrito -->
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <tr>
+                    <td><img src="" alt="Producto" required></td>
+                    <td>Nombre del Producto</td>
+                    <td></td>
+                    <td><input type="number" value="1" min="1" onchange="updateCart()"></td>
+                    <td>$99.99</td>
+                    <td><button onclick="removeFromCart()">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Total del Carrito -->
+        <div class="cart-total">
+           
+        </div>
+
+        <a class="checkout-button">Finalizar Compra</a>
+    </div>
+</main>
+    <!-- Inclui el footer -->
+    <%- include('partials/footer') %>
+    <script type="module" src="../../../public/javascripts/cart.js"></script>
+    <script type="module" src="../../controllers/cartController.js"></script>
+</body>
+</html>

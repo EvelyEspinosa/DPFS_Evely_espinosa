@@ -1,0 +1,24 @@
+<header>
+    <h1><a href="../../../public/images/Logo_Y_Iconos/Logo_Ely.png"></a>Bienvenidos a Ely Shopping</h1>
+    <h2>SÓLO NOS TOMA UN MOMENTO TRANSFORMAR TU CLOSET</h2>
+    <p>¿Estás listo para el cambio de tu ropa?</p>
+    <li class="dropdown">
+      <i class="bx bxs-user" data-bs-toggle="dropdown"></i>
+      <ul class="dropdown-menu">
+        <% if (!user) { %> 
+          <!-- Si el usuario no está autenticado, muestra Iniciar Sesión y Registrarse -->
+          <li><a class="dropdown-item" href="/users/login">Iniciar Sesión</a></li>
+          <li><a class="dropdown-item" href="/users/register">Registrarse</a></li>
+        <% } else { %> 
+          <!-- Si el usuario está autenticado, muestra Mi Cuenta y Cerrar Sesión -->
+          <li><a class="dropdown-item" href="/users/Account">Mi Cuenta</a></li>
+          <% if (user.type === "Administrador") { %>
+            <li><a class="dropdown-item" href="/admi/administrar">Gestión de Productos</a></li>
+            <li><a class="dropdown-item" href="/admiUsers/administrarUsers">Gestión de Usuarios</a></li>
+          <% } %>
+          <li><a class="dropdown-item" href="/users/logout">Cerrar Sesión</a></li>
+        <% } %>
+      </ul>
+    </li>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  </header>

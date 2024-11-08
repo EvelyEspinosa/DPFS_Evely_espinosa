@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <!-- Inclui el menú -->
+    <%- include('partials/menu') %>
+
+    <main>
+        <h1>Crear Producto</h1>
+        <form action="/create" method="POST">
+            <label for="name">Nombre del Producto:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+            
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            
+            <label for="image">Imagen:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <button type="submit">Crear Producto</button>
+        </form>
+    </main>
+
+    <!-- Inclui el footer -->
+    <%- include('partials/footer') %>
+    <script type="module" src="../../../public/javascripts/product.js"></script>
+    <script type="module" src="../../routes/products.js"></script>
+</body>
+</html>

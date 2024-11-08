@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head', {title:'Login', styles:['login'] }) %>
+</head>
+<body>
+    <!-- Incluir el menú -->
+    <%- include('partials/menu') %>
+    <main>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm" action="/login" method="POST">
+            <img id="logo" src="../../../public/images/Logo_Y_Iconos/Logo_Ely.png" alt="Logo Ely_Shopping">
+            <input type="email" id="email" name="email" placeholder="Correo electrónico"></br>
+
+            <input type="password" id="password" name="password" placeholder="Contraseña">
+
+            <div class="options">
+                    <input type="checkbox" name="remember"><label>Recuérdame</label>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+            
+        </form>
+    </div>
+</main>
+    <!-- Inclui el footer -->
+    <%- include('partials/footer') %>
+    <script src="../../../public/javascripts/login.js"></script>
+</body>
+</html>
