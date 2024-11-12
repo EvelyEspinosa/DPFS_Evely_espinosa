@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include('partials/head', {title:'Login', styles:['login'] }) %>
+    <%- include('partials/head', {title:'Login', style:['login'] }) %>
 </head>
 <body>
     <!-- Incluir el menú -->
@@ -26,5 +26,6 @@
     <!-- Inclui el footer -->
     <%- include('partials/footer') %>
     <script src="../../../public/javascripts/login.js"></script>
+    <script src="../../middlewares/authMiddleware.js"></script>
 </body>
 </html>

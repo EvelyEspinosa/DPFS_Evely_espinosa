@@ -22,7 +22,7 @@ app.use('/uploads', express.static('uploads'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(session({
-  secret: '1234',
+  secret: '12345',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
@@ -70,20 +70,6 @@ app.post('/login', async (req, res) => {
 
   res.status(200).json({ message: 'Inicio de sesión exitoso' });
 });
-
-const isAuthenticated = (req, res, next) => {
-  if (!req.session.user) {
-    return res.status(401).json({ message: 'No has iniciado sesión' });
-  }
-  next();
-};
-
-const isAdmin = (req, res, next) => {
-  if (req.session.user.role !== 'admin') {
-    return res.status(403).json({ message: 'Acceso denegado' });
-  }
-  next();
-};
 
 app.get('/dashboard', isAuthenticated, (req, res) => {
   res.send(`Bienvenido ${req.session.user.firstName}`);

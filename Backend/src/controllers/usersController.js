@@ -1,9 +1,9 @@
-const userModel = require('../database/models/userModel');
+const userModel = require('../../database/models/userModel');
 
 // Obtener todos los usuarios
-const getAllUsers = (req, res) => {
+const getAllUsers = async (req, res) => {
     try{ 
-    const users = userModel.readUsers();
+    const users = req.userModel.readUsers();
     res.render('users', { users });
     } catch (error) {
         console.error('Error al listar usuarios:', error);
@@ -13,26 +13,52 @@ const getAllUsers = (req, res) => {
 
 // Crear un nuevo usuario
 const createUser = (req, res) => {
-    const users = userModel.readUsers();
-    const newUser = req.body;
-    users.push(newUser);
-    userModel.writeUsers(users);
-    res.redirect('/users');
+    try{
+        const users = userModel.readUsers();
+        const newUser = req.body;
+
+        if (!newUser || !newUser.id || !newUser.name) {
+            return res.status(400).send('Datos de usuario incompletos');
+        }
+
+        users.push(newUser);
+        userModel.writeUsers(users);
+        res.redirect('/users');
+} catch(error) {
+    console.error('Error al crear usuario:', error);
+        res.status(500).send('Error al crear el usuario.');
+}
 };
 
 // Buscar un usuario por su ID
 const getUserById = (req, res) => {
-    const users = userModel.readUsers();
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if (user) {
-        res.render('userDetail', { user });
-    } else {
-        res.status(404).send('Usuario no encontrado');
+    try {
+        const userId = parseInt(req.params.id);
+        if (isNaN(userId)) {
+            return res.status(400).send('ID de usuario no válido');
+        }
+
+        const users = userModel.readUsers();
+        const user = users.find(u => u.id === userId);
+
+        if (user) {
+            res.render('userDetail', { user });
+        } else {
+            res.status(404).send('Usuario no encontrado');
+        }
+    } catch (error) {
+        console.error('Error al buscar usuario:', error);
+        res.status(500).send('Error al buscar el usuario.');
     }
 };
 
 // Editar un usuario existente
 const updateUser = (req, res) => {
+    try {
+        const userId = parseInt(req.params.id);
+        if (isNaN(userId)) {
+            return res.status(400).send('ID de usuario no válido');
+        }
     const users = userModel.readUsers();
     const userIndex = users.findIndex(u => u.id === req.params.id);
     
@@ -43,10 +69,19 @@ const updateUser = (req, res) => {
     } else {
         res.status(404).send('Usuario no encontrado');
     }
+} catch (error) {
+    console.error('Error al actualizar usuario:', error);
+    res.status(500).send('Error al actualizar el usuario.');
+}
 };
 
 // Eliminar un usuario
 const deleteUser = (req, res) => {
+    try {
+        const userId = parseInt(req.params.id);
+        if (isNaN(userId)) {
+            return res.status(400).send('ID de usuario no válido');
+        }
     const users = userModel.readUsers();
     const updatedUsers = users.filter(u => u.id !== req.params.id);
     
@@ -56,6 +91,10 @@ const deleteUser = (req, res) => {
     } else {
         res.status(404).send('Usuario no encontrado');
     }
+} catch (error) {
+    console.error('Error al eliminar usuario:', error);
+    res.status(500).send('Error al eliminar el usuario.');
+}
 };
 
 module.exports = {

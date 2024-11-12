@@ -1,18 +1,18 @@
-const { UserModel, Cart } = require('../../database/models'); 
+const { userModel, cartModel } = require('../../database/models/'); 
 
 let authMiddleware = {
   MiddlewareAuth: async (req, res, next) => {
     if (req.session.user) {
       try {
         req.user = req.session.user;
-        const userWithCart = await UserModel.findByPk(req.user.id, {
-          include: [{ model: Cart, as: 'carts' }]
+        const userWithCart = await userModel.findByPk(req.user.id, {
+          include: [{ model: cartModel, as: 'carts' }]
         });
 
         if (userWithCart && userWithCart.carts.length > 0) {
           req.user.cartId = userWithCart.carts[0].id;
         } else {
-          const newCart = await Cart.create({
+          const newCart = await cartModel.create({
             user_id: userWithCart.id,
             fecha_de_creacion: new Date()
           });
@@ -72,5 +72,20 @@ let authMiddleware = {
     }
   },
 };
+const isAuthenticated = (req, res, next) => {
+  if (!req.session.user) {
+    return res.status(401).json({ message: 'No has iniciado sesión' });
+  }
+  res.redirect('/login');
+  next();
+};
 
-module.exports = authMiddleware;
+const isAdmin = (req, res, next) => {
+  if (req.session.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Acceso denegado' });
+  }
+  res.redirect('/dashboard');
+  next();
+};
+
+module.exports = {authMiddleware, isAuthenticated, isAdmin };
